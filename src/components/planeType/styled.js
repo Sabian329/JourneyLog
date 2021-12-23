@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.75);
   width: 100vw;
   height: 60vh;
   position: absolute;

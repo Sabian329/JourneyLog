@@ -1,18 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-export const addInfo = createSlice({
+export const addInfoSlice = createSlice({
   name: "information",
   initialState: {
-    list: 100,
+    init: {
+      name: "",
+      type: "",
+      sn: "",
+      reg: "",
+    },
   },
   reducers: {
-    addItem(state, action) {
-      state.list = state.list + 1;
+    addAircraftInfo(state, action) {
+      state.init = { ...state.init, ...action.payload };
     },
     deleteItem(state, action) {
-      state.list = state.list - 1;
+      state.init = action.payload.x;
     },
   },
 });
 
-export const { addItem, deleteItem } = addInfo.actions;
-export default addInfo.reducer;
+export const { addAircraftInfo, deleteItem } = addInfoSlice.actions;
+export default addInfoSlice.reducer;
