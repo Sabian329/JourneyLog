@@ -8,6 +8,7 @@ export const addInfoSlice = createSlice({
       sn: "",
       reg: "",
     },
+    validate: { isValidate: false },
   },
   reducers: {
     addAircraftInfo(state, action) {
@@ -16,8 +17,12 @@ export const addInfoSlice = createSlice({
     addAircraftPilot(state, action) {
       state.pilot = { name: action.payload };
     },
+    validateForm(state, action) {
+      state.validate = { isValidate: action.payload };
+    },
   },
 });
 
-export const { addAircraftPilot, addAircraftInfo } = addInfoSlice.actions;
+export const { addAircraftPilot, addAircraftInfo, validateForm } =
+  addInfoSlice.actions;
 export default addInfoSlice.reducer;

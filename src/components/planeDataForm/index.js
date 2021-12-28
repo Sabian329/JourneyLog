@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectInfo } from "../../Redux/selectors";
-import { addAircraftInfo } from "../../Redux/slices/addInfo";
-import { Input } from "../input/styled";
-import { Form, InputWrapper, Wrapper } from "./styled";
+import { addAircraftInfo, validateForm } from "../../Redux/slices/addInfo";
+import { Input } from "../ui/input/styled";
+import { Form, InputWrapper, Submit, Wrapper } from "./styled";
 
-export const PlaneType = () => {
+export const PlaneDataForm = () => {
   const infoState = useSelector(selectInfo);
   const dispatch = useDispatch();
   const [value, setValue] = useState(
@@ -15,6 +15,7 @@ export const PlaneType = () => {
   const submitForm = (e) => {
     e.preventDefault();
     dispatch(addAircraftInfo(value));
+    dispatch(validateForm(true));
   };
 
   return (
@@ -56,6 +57,8 @@ export const PlaneType = () => {
             required
             type="text"
             name="registration"
+            maxLength={7}
+            minLength={6}
             onChange={(e) =>
               setValue((prev) => ({
                 ...prev,
@@ -64,7 +67,7 @@ export const PlaneType = () => {
             }
           />
         </InputWrapper>
-        <input type="submit" value="wyślij" />
+        <Submit type="submit" value="NEXT" />
       </Form>
     </Wrapper>
   );
