@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
     margin: 1rem;
   }
 `;
-export const InputWrapper = styled.div`
+export const InputWrapper = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;

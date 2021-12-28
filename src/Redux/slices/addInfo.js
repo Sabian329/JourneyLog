@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const addInfoSlice = createSlice({
   name: "information",
   initialState: {
-    init: {
-      name: "",
+    pilot: { name: "" },
+    plane: {
       type: "",
       sn: "",
       reg: "",
@@ -11,13 +11,13 @@ export const addInfoSlice = createSlice({
   },
   reducers: {
     addAircraftInfo(state, action) {
-      state.init = { ...state.init, ...action.payload };
+      state.plane = { ...state.plane, ...action.payload };
     },
-    deleteItem(state, action) {
-      state.init = action.payload.x;
+    addAircraftPilot(state, action) {
+      state.pilot = { name: action.payload };
     },
   },
 });
 
-export const { addAircraftInfo, deleteItem } = addInfoSlice.actions;
+export const { addAircraftPilot, addAircraftInfo } = addInfoSlice.actions;
 export default addInfoSlice.reducer;
