@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const addInfoSlice = createSlice({
   name: "information",
   initialState: {
-    pilot: { name: "" },
+    pilot: { name: "jan" },
     plane: {
       type: "",
       sn: "",

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { selectInfo } from "../../Redux/selectors";
 import { addAircraftInfo, validateForm } from "../../Redux/slices/addInfo";
 import { Input } from "../ui/input/styled";
@@ -16,6 +17,7 @@ export const PlaneDataForm = () => {
     e.preventDefault();
     dispatch(addAircraftInfo(value));
     dispatch(validateForm(true));
+    window.location.replace("/flights");
   };
 
   return (

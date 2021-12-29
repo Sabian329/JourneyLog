@@ -5,7 +5,7 @@ import { Input } from "../../components/ui/input/styled";
 import { selectInfo } from "../../Redux/selectors";
 import { addAircraftPilot } from "../../Redux/slices/addInfo";
 import { InputWrapper, Wrapper } from "./styled";
-import { PlaneDataForm } from "../../components/planeDataForm";
+import { PlaneDataForm } from "../../components/PlaneDataForm";
 
 export const MainView = () => {
   const infoState = useSelector(selectInfo);
