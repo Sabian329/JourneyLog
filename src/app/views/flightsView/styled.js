@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import flightBack from "../../assets/flightsBack.jpg";
+import flightBack from "../../../assets/flightsBack.jpg";
 
 export const Wrapper = styled.section`
   min-height: 100vh;

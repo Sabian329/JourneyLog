@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { selectInfo } from "../../Redux/selectors";
-import {
-  addAircraftInfo,
-  addAircraftPilot,
-  validateForm,
-} from "../../Redux/slices/addInfo";
+import { selectInfo } from "../../../Redux/selectors";
+import { addAircraftInfo, validateForm } from "../../../Redux/slices/addInfo";
 import { FormInput } from "../FormInput";
-import { SubmitBtn } from "../ui/buttons/styled";
-import { Input } from "../ui/input/styled";
-import { Form, InputWrapper, Wrapper } from "./styled";
+import { SubmitBtn } from "../../ui/buttons/styled";
+import { Form, Wrapper } from "./styled";
 
 export const PlaneDataForm = () => {
   const infoState = useSelector(selectInfo);

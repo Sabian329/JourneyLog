@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { deviceMin } from "../../theme/mediaQueries";
+import { deviceMin } from "../../../theme/mediaQueries";
 
 export const Wrapper = styled.div`
   display: flex;

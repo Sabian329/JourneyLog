@@ -17,7 +17,8 @@ export const SubmitBtn = styled.input`
   width: 5rem;
   height: 2rem;
   color: #1c1c1c;
-  transition: 0.5s;
+  transition: 0.3s;
+  margin: 1rem;
   :hover {
     background-color: #3b592b;
     color: #fff;

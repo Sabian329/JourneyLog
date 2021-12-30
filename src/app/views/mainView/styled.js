@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import back from "../../assets/loginBack.jpg";
+import back from "../../../assets/map.jpg";
 
 export const Wrapper = styled.div`
   background-image: url(${back});
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   z-index: 1;

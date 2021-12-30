@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "../ui/input/styled";
+import { Input } from "../../ui/input/styled";
 import { InputWrapper } from "./styled";
 
 export const FormInput = ({ setValue, name, reduxName }) => {

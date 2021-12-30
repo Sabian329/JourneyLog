@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { FlightsView } from "./views/flightsView";
-import { MainView } from "./views/mainView";
-
-export const App = () => {
+import { MainView } from "../views/mainView";
+import { FlightsView } from "../views/flightsView";
+export const Root = () => {
   return (
     <BrowserRouter>
       <Routes>
