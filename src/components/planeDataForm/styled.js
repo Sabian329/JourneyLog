@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { deviceMin } from "../../theme/mediaQueries";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -7,14 +8,19 @@ export const Wrapper = styled.div`
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.85);
   width: 100vw;
-  height: 60vh;
+  height: max-content;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
+  @media ${deviceMin.laptop} {
+    width: 20rem;
+    position: unset;
+    border-radius: 15px;
+  }
   h1 {
     font-size: 1.5rem;
-    margin: 0.5rem;
+    margin: 0;
     color: #ffffff;
     font-weight: 300;
     padding: 0;
@@ -41,13 +47,4 @@ export const Form = styled.form`
   flex-direction: column;
   height: max-content;
   margin: 1rem;
-`;
-
-export const Submit = styled.input`
-  background-color: #c4c4c4;
-  border: none;
-  border-radius: 10px;
-  width: 5rem;
-  height: 2rem;
-  color: #1c1c1c;
 `;

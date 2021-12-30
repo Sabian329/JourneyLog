@@ -9,9 +9,9 @@ export const Wrapper = styled.div`
   z-index: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   position: relative;
-
   header {
     color: #ffffff;
     font-size: 3rem;
@@ -25,6 +25,8 @@ export const InputWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   height: max-content;
+  background-color: rgba(0, 0, 0, 0.85);
+
   label {
     padding: 0 0 0.7rem 0;
     color: #ffffff;

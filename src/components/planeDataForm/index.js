@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectInfo } from "../../Redux/selectors";
-import { addAircraftInfo, validateForm } from "../../Redux/slices/addInfo";
+import {
+  addAircraftInfo,
+  addAircraftPilot,
+  validateForm,
+} from "../../Redux/slices/addInfo";
+import { FormInput } from "../FormInput";
+import { SubmitBtn } from "../ui/buttons/styled";
 import { Input } from "../ui/input/styled";
-import { Form, InputWrapper, Submit, Wrapper } from "./styled";
+import { Form, InputWrapper, Wrapper } from "./styled";
 
 export const PlaneDataForm = () => {
   const infoState = useSelector(selectInfo);
@@ -17,59 +23,27 @@ export const PlaneDataForm = () => {
     e.preventDefault();
     dispatch(addAircraftInfo(value));
     dispatch(validateForm(true));
-    window.location.replace("/flights");
+    // window.location.replace("/flights");
   };
 
   return (
     <Wrapper>
-      <h1>
-        {`aircraft`.toUpperCase()}
-        {infoState.list}
-      </h1>
+      <header>Journey Log</header>
+
       <Form onSubmit={submitForm}>
-        <InputWrapper>
-          <label>{`type`.toUpperCase()}</label>
-          <Input
-            required
-            name="type"
-            onChange={(e) =>
-              setValue((prev) => ({
-                ...prev,
-                type: e.target.value.toUpperCase(),
-              }))
-            }
-          />
-        </InputWrapper>
-        <InputWrapper>
-          <label>{`serial number`.toUpperCase()}</label>
-          <Input
-            required
-            name="serialNumber"
-            onChange={(e) =>
-              setValue((prev) => ({
-                ...prev,
-                sn: e.target.value.toUpperCase(),
-              }))
-            }
-          />
-        </InputWrapper>
-        <InputWrapper>
-          <label>{`registration`.toUpperCase()}</label>
-          <Input
-            required
-            type="text"
-            name="registration"
-            maxLength={7}
-            minLength={6}
-            onChange={(e) =>
-              setValue((prev) => ({
-                ...prev,
-                reg: e.target.value.toUpperCase(),
-              }))
-            }
-          />
-        </InputWrapper>
-        <Submit type="submit" value="NEXT" />
+        <h1>
+          {`pilot`.toUpperCase()}
+          {infoState.list}
+        </h1>
+        <FormInput name="pic name" reduxName="name" setValue={setValue} />
+        <h1>
+          {`aircraft`.toUpperCase()}
+          {infoState.list}
+        </h1>
+        <FormInput name="Type" reduxName="type" setValue={setValue} />
+        <FormInput name="serial number" reduxName="sn" setValue={setValue} />
+        <FormInput name="registration" reduxName="reg" setValue={setValue} />
+        <SubmitBtn type="submit" value="NEXT" />
       </Form>
     </Wrapper>
   );

@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const addInfoSlice = createSlice({
   name: "information",
   initialState: {
-    pilot: { name: "jan" },
     plane: {
+      name: "",
       type: "",
       sn: "",
       reg: "",
@@ -14,9 +14,7 @@ export const addInfoSlice = createSlice({
     addAircraftInfo(state, action) {
       state.plane = { ...state.plane, ...action.payload };
     },
-    addAircraftPilot(state, action) {
-      state.pilot = { name: action.payload };
-    },
+
     validateForm(state, action) {
       state.validate = { isValidate: action.payload };
     },
