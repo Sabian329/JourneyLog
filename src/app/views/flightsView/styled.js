@@ -9,5 +9,6 @@ export const Wrapper = styled.section`
   background-color: rgba(0, 0, 0, 0.85);
   p {
     margin: 0;
+    color: #fff;
   }
 `;

@@ -2,11 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 export const addInfoSlice = createSlice({
   name: "information",
   initialState: {
+    headers: {
+      name: "Pic Name",
+      type: "Plane Type",
+      sn: "Serial Number",
+      reg: "Registration",
+    },
     plane: {
-      name: "",
-      type: "",
-      sn: "",
-      reg: "",
+      name: "JAN",
+      type: "MS826A",
+      sn: "88475B",
+      reg: "SP-HKN",
     },
     validate: { isValidate: false },
   },
@@ -21,6 +27,5 @@ export const addInfoSlice = createSlice({
   },
 });
 
-export const { addAircraftPilot, addAircraftInfo, validateForm } =
-  addInfoSlice.actions;
+export const { addAircraftInfo, validateForm } = addInfoSlice.actions;
 export default addInfoSlice.reducer;

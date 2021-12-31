@@ -5,6 +5,7 @@ import { addAircraftInfo, validateForm } from "../../../Redux/slices/addInfo";
 import { FormInput } from "../FormInput";
 import { SubmitBtn } from "../../ui/buttons/styled";
 import { Form, Wrapper } from "./styled";
+import { motion } from "framer-motion";
 
 export const PlaneDataForm = () => {
   const infoState = useSelector(selectInfo);
@@ -17,13 +18,11 @@ export const PlaneDataForm = () => {
     e.preventDefault();
     dispatch(addAircraftInfo(value));
     dispatch(validateForm(true));
-    // window.location.replace("/flights");
   };
 
   return (
     <Wrapper>
       <header>Journey Log</header>
-
       <Form onSubmit={submitForm}>
         <h1>
           {`pilot`.toUpperCase()}

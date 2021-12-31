@@ -1,14 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectInfo } from "../../Redux/selectors";
+import { useState } from "react";
+import { AddFlightModal } from "../../components/common/AddFlightModal";
+import { FlightsInfoHeader } from "../../components/common/FlightsInfoHeader";
+import { PlaneDataForm } from "../../components/common/PlaneDataForm";
+import { Button } from "../../components/ui/buttons/styled";
 import { Wrapper } from "./styled";
 
 export const FlightsView = () => {
-  const infoState = useSelector(selectInfo);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <Wrapper>
-      <p>{infoState.pilot.name}</p>
+      <FlightsInfoHeader />
+      <Button onClick={() => setIsModalOpen(!isModalOpen)}>Add</Button>
+      {isModalOpen && (
+        <AddFlightModal
+          children={<PlaneDataForm />}
+          setIsModalOpen={setIsModalOpen}
+        />
+      )}
     </Wrapper>
   );
 };

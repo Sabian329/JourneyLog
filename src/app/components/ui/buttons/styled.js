@@ -9,6 +9,11 @@ export const Button = styled.button`
   border-radius: 10px;
   margin: 1rem;
   color: #1f1f1f;
+  transition: 0.3s;
+  :hover {
+    background-color: #3b592b;
+    color: #fff;
+  }
 `;
 export const SubmitBtn = styled.input`
   background-color: #c4c4c4;
