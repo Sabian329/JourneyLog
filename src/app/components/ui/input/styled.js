@@ -13,4 +13,7 @@ export const Input = styled.input`
     outline: none;
     background-color: #c4c4c4;
   }
+  ::placeholder {
+    color: #ffffff;
+  }
 `;

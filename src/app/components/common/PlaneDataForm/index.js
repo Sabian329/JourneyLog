@@ -5,7 +5,6 @@ import { addAircraftInfo, validateForm } from "../../../Redux/slices/addInfo";
 import { FormInput } from "../FormInput";
 import { SubmitBtn } from "../../ui/buttons/styled";
 import { Form, Wrapper } from "./styled";
-import { motion } from "framer-motion";
 
 export const PlaneDataForm = () => {
   const infoState = useSelector(selectInfo);

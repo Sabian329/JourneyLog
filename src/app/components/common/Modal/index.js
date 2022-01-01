@@ -1,7 +1,7 @@
 import React from "react";
 import { MainWrapper, ModalBody } from "./styled";
 
-export const AddFlightModal = ({ setIsModalOpen, children }) => {
+export const Modal = ({ setIsModalOpen, children }) => {
   const closeWrapper = (e) => e.stopPropagation();
 
   return (
