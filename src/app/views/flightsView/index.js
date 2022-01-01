@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { FlightsInfoHeader } from "../../components/common/FlightsInfoHeader";
+import { FlightsTable } from "../../components/common/FlightsTable";
 import { Modal } from "../../components/common/Modal";
 import { PlaneDataForm } from "../../components/common/PlaneDataForm";
 import { Button } from "../../components/ui/buttons/styled";
@@ -13,8 +14,14 @@ export const FlightsView = () => {
       <FlightsInfoHeader />
       <Button onClick={() => setIsModalOpen(!isModalOpen)}>Edit Info</Button>
       {isModalOpen && (
-        <Modal children={<PlaneDataForm />} setIsModalOpen={setIsModalOpen} />
+        <Modal
+          children={
+            <PlaneDataForm btnName="SAVE" setIsModalOpen={setIsModalOpen} />
+          }
+          setIsModalOpen={setIsModalOpen}
+        />
       )}
+      <FlightsTable />
     </Wrapper>
   );
 };

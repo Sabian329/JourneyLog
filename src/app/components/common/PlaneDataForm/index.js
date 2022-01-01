@@ -6,7 +6,7 @@ import { FormInput } from "../FormInput";
 import { SubmitBtn } from "../../ui/buttons/styled";
 import { Form, Wrapper } from "./styled";
 
-export const PlaneDataForm = () => {
+export const PlaneDataForm = ({ btnName, setIsModalOpen }) => {
   const infoState = useSelector(selectInfo);
   const dispatch = useDispatch();
   const [value, setValue] = useState(
@@ -17,6 +17,7 @@ export const PlaneDataForm = () => {
     e.preventDefault();
     dispatch(addAircraftInfo(value));
     dispatch(validateForm(true));
+    setIsModalOpen && setIsModalOpen(false);
   };
 
   return (
@@ -35,7 +36,7 @@ export const PlaneDataForm = () => {
         <FormInput name="Type" reduxName="type" setValue={setValue} />
         <FormInput name="serial number" reduxName="sn" setValue={setValue} />
         <FormInput name="registration" reduxName="reg" setValue={setValue} />
-        <SubmitBtn type="submit" value="NEXT" />
+        <SubmitBtn type="submit" value={btnName} />
       </Form>
     </Wrapper>
   );

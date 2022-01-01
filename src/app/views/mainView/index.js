@@ -4,7 +4,7 @@ import { PlaneDataForm } from "../../components/common/PlaneDataForm";
 export const MainView = () => {
   return (
     <Wrapper>
-      <PlaneDataForm />
+      <PlaneDataForm btnName="NEXT" />
     </Wrapper>
   );
 };
