@@ -1,10 +1,11 @@
 import React from "react";
+import { PlaneInfoForm } from "../../components/common/PlaneInfoForm";
 import { Wrapper } from "./styled";
-import { PlaneDataForm } from "../../components/common/PlaneDataForm";
+
 export const MainView = () => {
   return (
     <Wrapper>
-      <PlaneDataForm btnName="NEXT" />
+      <PlaneInfoForm btnName="NEXT" />
     </Wrapper>
   );
 };

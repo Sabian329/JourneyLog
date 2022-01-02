@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectInfo } from "../../../Redux/selectors";
-import { Input } from "../../ui/input/styled";
+import { selectInfo } from "../../../../Redux/selectors";
+import { Input } from "../../../ui/input/styled";
 import { InputWrapper } from "./styled";
 
-export const FormInput = ({ setValue, name, reduxName }) => {
+export const InfoFormInput = ({ setValue, name, reduxName }) => {
   const infoState = useSelector(selectInfo);
   return (
     <InputWrapper>

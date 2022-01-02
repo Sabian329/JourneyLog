@@ -5,6 +5,6 @@ import addTableReducer from "../slices/addTable";
 export const store = configureStore({
   reducer: {
     information: addInfoReducer,
-    table: addTableReducer,
+    tableObject: addTableReducer,
   },
 });

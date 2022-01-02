@@ -2,5 +2,5 @@ export const selectInfo = (state) => {
   return state.information;
 };
 export const selectTable = (state) => {
-  return state.table;
+  return state.tableObject;
 };

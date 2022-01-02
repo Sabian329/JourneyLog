@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectInfo } from "../../../Redux/selectors";
 import { addAircraftInfo, validateForm } from "../../../Redux/slices/addInfo";
-import { FormInput } from "../FormInput";
+import { InfoFormInput } from "./InfoFormInput";
 import { SubmitBtn } from "../../ui/buttons/styled";
 import { Form, Wrapper } from "./styled";
 
-export const PlaneDataForm = ({ btnName, setIsModalOpen }) => {
+export const PlaneInfoForm = ({ btnName, setIsModalOpen }) => {
   const infoState = useSelector(selectInfo);
   const dispatch = useDispatch();
   const [value, setValue] = useState(
@@ -28,14 +28,22 @@ export const PlaneDataForm = ({ btnName, setIsModalOpen }) => {
           {`pilot`.toUpperCase()}
           {infoState.list}
         </h1>
-        <FormInput name="pic name" reduxName="name" setValue={setValue} />
+        <InfoFormInput name="pic name" reduxName="name" setValue={setValue} />
         <h1>
           {`aircraft`.toUpperCase()}
           {infoState.list}
         </h1>
-        <FormInput name="Type" reduxName="type" setValue={setValue} />
-        <FormInput name="serial number" reduxName="sn" setValue={setValue} />
-        <FormInput name="registration" reduxName="reg" setValue={setValue} />
+        <InfoFormInput name="Type" reduxName="type" setValue={setValue} />
+        <InfoFormInput
+          name="serial number"
+          reduxName="sn"
+          setValue={setValue}
+        />
+        <InfoFormInput
+          name="registration"
+          reduxName="reg"
+          setValue={setValue}
+        />
         <SubmitBtn type="submit" value={btnName} />
       </Form>
     </Wrapper>
