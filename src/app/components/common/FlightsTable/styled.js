@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WrapperTable = styled.table`
+export const WrapperTable = styled.tbody`
   background-color: #000;
   color: #fff;
   margin: 1rem;

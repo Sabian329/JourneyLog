@@ -4,22 +4,20 @@ export const addTableSlice = createSlice({
   initialState: {
     labelNames: {
       data: ["Date", "date"],
-      le: ["Le", "number"],
       remFuel: ["Rem", "number"],
       upFuel: ["Up +", "number"],
-      totalFuel: ["Total", "number"],
+      // totalFuel: ["Total", "number"],
       from: ["From", "text"],
       to: ["To", "text"],
       takeOf: ["Take of", "time"],
       land: ["Landing", "time"],
-      totalFT: ["Total Time", "time"],
+      // totalFT: ["Total Time", "time"],
       prev: ["Previous", "number"],
-      current: ["Current", "number"],
+      // current: ["Current", "number"],
     },
     tables: {
       table1: {
-        data: "02.05.2021r",
-        le: "1",
+        data: "2022-01-04",
         remFuel: "100l",
         upFuel: "20l",
         totalFuel: "150l",

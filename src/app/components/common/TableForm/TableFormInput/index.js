@@ -12,6 +12,7 @@ export const TableFormInput = ({
     <InputWrapper>
       <label>{name}</label>
       <InputTableUI
+        required
         type={type}
         onChange={(e) =>
           setTableStateLocal((prev) => ({
