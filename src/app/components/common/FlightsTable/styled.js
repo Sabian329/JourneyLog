@@ -1,33 +1,27 @@
 import styled from "styled-components";
+import { colorPalete } from "../../../theme/colors";
 
-export const WrapperTable = styled.tbody`
-  background-color: #000;
-  color: #fff;
+export const WrapperTable = styled.table`
+  border-spacing: 0px;
   margin: 1rem;
-  color: wheat;
-  border: 1px solid wheat;
-`;
-export const Cells = styled.td`
-  padding: 1rem;
-  color: red;
-  border: 1px solid red;
-  padding: 1rem;
-  text-align: center;
-`;
-export const MajorCells = styled.td`
-  padding: 0rem;
-  color: red;
-  border: 1px solid blue;
-`;
+  padding: 0;
+  border: 1px solid #fff;
+  tbody {
+    background-color: ${colorPalete.h};
+    color: #fff;
+    margin: 1rem;
+    color: wheat;
+  }
 
-export const CellsHeaders = styled.th`
-  color: yellow;
-  border: 1px solid yellow;
-  padding: 1rem 2rem 1rem 2rem;
+  td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid ${colorPalete.d};
+  }
 `;
-export const MainHeaders = styled.th`
-  color: wheat;
-  border: 1px solid wheat;
-  padding: 1rem;
-  font-size: 1.2rem;
+export const DataCell = styled.td`
+  color: #fff;
+`;
+export const HeaderCells = styled.td`
+  font-weight: 200;
 `;

@@ -4,7 +4,7 @@ import { selectInfo } from "../../../../Redux/selectors";
 import { Input } from "../../../ui/input/styled";
 import { InputWrapper } from "./styled";
 
-export const InfoFormInput = ({ setValue, name, reduxName }) => {
+export const InfoFormInput = ({ setValue, name, reduxName, isReq }) => {
   const infoState = useSelector(selectInfo);
   return (
     <InputWrapper>
@@ -12,6 +12,7 @@ export const InfoFormInput = ({ setValue, name, reduxName }) => {
       <Input
         type="text"
         name={name}
+        required={isReq}
         placeholder={infoState.plane[reduxName]}
         onChange={(e) =>
           setValue((prev) => ({

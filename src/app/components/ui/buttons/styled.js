@@ -29,3 +29,15 @@ export const SubmitBtn = styled.input`
     color: #fff;
   }
 `;
+export const EditButton = styled.button`
+  border: none;
+  width: 5rem;
+  height: 2rem;
+  font-size: 1rem;
+  color: #fff;
+  transition: 0.3s;
+  :hover {
+    background-color: #3b592b;
+    color: #fff;
+  }
+`;

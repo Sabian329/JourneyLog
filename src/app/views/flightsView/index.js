@@ -12,18 +12,21 @@ import { Wrapper } from "./styled";
 
 export const FlightsView = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isTableModalOpen, setTableIsModalOpen] = useState(true);
+  const [isTableModalOpen, setTableIsModalOpen] = useState(false);
   const infoState = useSelector(selectTable);
   console.log(infoState.table);
   return (
     <Wrapper>
-      <FlightsInfoHeader />
-      <Button onClick={() => setIsModalOpen(!isModalOpen)}>Edit Info</Button>
+      <FlightsInfoHeader setIsModalOpen={setIsModalOpen} />
       {isModalOpen && (
         <Modal
           name="edit"
           children={
-            <PlaneInfoForm btnName="SAVE" setIsModalOpen={setIsModalOpen} />
+            <PlaneInfoForm
+              isReq={false}
+              btnName="SAVE"
+              setIsModalOpen={setIsModalOpen}
+            />
           }
           setIsModalOpen={setIsModalOpen}
         />

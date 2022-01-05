@@ -50,15 +50,12 @@ export const TableForm = () => {
           ? `${totalFlightTime?.minutes}`
           : `0${totalFlightTime?.minutes}`;
 
-      let currentFlightTime = min;
-
       setTableStateLocal((prev) => ({
         ...prev,
-        totalFuel: totalFuel | 0,
+        totalFuel: totalFuel || 0,
         totalFT: `${h}:${min}`,
+        current: totalFTMinutes || 0,
       }));
-
-      console.log(totalFTMinutes);
     },
     [
       tableStateLocal.takeOf,

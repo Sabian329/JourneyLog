@@ -6,7 +6,7 @@ import { InfoFormInput } from "./InfoFormInput";
 import { SubmitBtn } from "../../ui/buttons/styled";
 import { Form, Wrapper } from "./styled";
 
-export const PlaneInfoForm = ({ btnName, setIsModalOpen }) => {
+export const PlaneInfoForm = ({ btnName, setIsModalOpen, isReq }) => {
   const infoState = useSelector(selectInfo);
   const dispatch = useDispatch();
   const [value, setValue] = useState(
@@ -28,18 +28,30 @@ export const PlaneInfoForm = ({ btnName, setIsModalOpen }) => {
           {`pilot`.toUpperCase()}
           {infoState.list}
         </h1>
-        <InfoFormInput name="pic name" reduxName="name" setValue={setValue} />
+        <InfoFormInput
+          isReq={isReq}
+          name="pic name"
+          reduxName="name"
+          setValue={setValue}
+        />
         <h1>
           {`aircraft`.toUpperCase()}
           {infoState.list}
         </h1>
-        <InfoFormInput name="Type" reduxName="type" setValue={setValue} />
         <InfoFormInput
+          isReq={isReq}
+          name="Type"
+          reduxName="type"
+          setValue={setValue}
+        />
+        <InfoFormInput
+          isReq={isReq}
           name="serial number"
           reduxName="sn"
           setValue={setValue}
         />
         <InfoFormInput
+          isReq={isReq}
           name="registration"
           reduxName="reg"
           setValue={setValue}

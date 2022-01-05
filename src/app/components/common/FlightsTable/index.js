@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  WrapperTable,
-  Cells,
-  CellsHeaders,
-  MainHeaders,
-  MajorCells,
-} from "./styled";
+import { DataCell, HeaderCells, WrapperTable } from "./styled";
 
 export const FlightsTable = ({
   data,
@@ -22,64 +16,43 @@ export const FlightsTable = ({
 }) => {
   return (
     <>
-      <table>
-        <WrapperTable>
+      <WrapperTable>
+        <tbody>
           <tr>
-            <MainHeaders>Date</MainHeaders>
-            <MainHeaders>Fuel</MainHeaders>
-            <MainHeaders>Route</MainHeaders>
-            <MainHeaders>Flight Time</MainHeaders>
-            <MainHeaders>Plane FT</MainHeaders>
+            <td>Date</td>
+            <td colSpan="3">Fuel</td>
+            <td colSpan="2">Route</td>
+            <td colSpan="3">Flight Time</td>
+            <td colSpan="2">Plane FT</td>
           </tr>
           <tr>
-            <Cells>{data}</Cells>
-            <MajorCells>
-              <tr>
-                <CellsHeaders>rem</CellsHeaders>
-                <CellsHeaders>up</CellsHeaders>
-                <CellsHeaders>total</CellsHeaders>
-              </tr>
-              <tr>
-                <Cells>{remFuel}</Cells>
-                <Cells>{upFuel}</Cells>
-                <Cells>{totalFuel}</Cells>
-              </tr>
-            </MajorCells>
-            <MajorCells>
-              <tr>
-                <CellsHeaders>from</CellsHeaders>
-                <CellsHeaders>to</CellsHeaders>
-              </tr>
-              <tr>
-                <Cells>{from}</Cells>
-                <Cells>{to}</Cells>
-              </tr>
-            </MajorCells>
-            <MajorCells>
-              <tr>
-                <CellsHeaders>take of</CellsHeaders>
-                <CellsHeaders>Landing</CellsHeaders>
-                <CellsHeaders>Total</CellsHeaders>
-              </tr>
-              <tr>
-                <Cells>{takeOf}</Cells>
-                <Cells>{land}</Cells>
-                <Cells>{totalFT}</Cells>
-              </tr>
-            </MajorCells>
-            <MajorCells>
-              <tr>
-                <CellsHeaders>Previous</CellsHeaders>
-                <CellsHeaders>Current</CellsHeaders>
-              </tr>
-              <tr>
-                <Cells>{prev}</Cells>
-                <Cells>{current}</Cells>
-              </tr>
-            </MajorCells>
+            <DataCell rowSpan="3">{data}</DataCell>
+            <HeaderCells>rem</HeaderCells>
+            <HeaderCells>up</HeaderCells>
+            <HeaderCells>total</HeaderCells>
+            <HeaderCells>from</HeaderCells>
+            <HeaderCells>to</HeaderCells>
+            <HeaderCells>start</HeaderCells>
+            <HeaderCells>landing</HeaderCells>
+            <HeaderCells>total</HeaderCells>
+            <HeaderCells>current</HeaderCells>
+            <HeaderCells>total</HeaderCells>
           </tr>
-        </WrapperTable>
-      </table>
+          <tr>
+            <DataCell>{remFuel}</DataCell>
+            <DataCell>{upFuel}</DataCell>
+            <DataCell>{totalFuel}</DataCell>
+            <DataCell>{from}</DataCell>
+            <DataCell>{to}</DataCell>
+            <DataCell>{takeOf}</DataCell>
+            <DataCell>{land}</DataCell>
+            <DataCell>{totalFT}</DataCell>
+            <DataCell>{prev}</DataCell>
+            <DataCell>{current}</DataCell>
+          </tr>
+          <tr></tr>
+        </tbody>
+      </WrapperTable>
     </>
   );
 };

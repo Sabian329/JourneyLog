@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { colorPalete } from "../../../theme/colors";
 
 export const Wrapper = styled.header`
   width: 100vw;
-  height: 6rem;
-  background-color: #000;
-  margin: 0;
+  margin: 0 0 3rem 0;
+  background-color: ${colorPalete.a};
 `;
 export const InfoItem = styled.div`
   display: flex;
@@ -13,9 +13,7 @@ export const InfoItem = styled.div`
   margin: 1rem;
   h1 {
     margin: 0;
-    background: -webkit-linear-gradient(#eee, #333);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: ${colorPalete.f};
   }
 `;
 export const Animation = styled(motion.div)`

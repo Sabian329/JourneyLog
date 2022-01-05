@@ -5,7 +5,7 @@ import { Wrapper } from "./styled";
 export const MainView = () => {
   return (
     <Wrapper>
-      <PlaneInfoForm btnName="NEXT" />
+      <PlaneInfoForm isReq={true} btnName="NEXT" />
     </Wrapper>
   );
 };

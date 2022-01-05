@@ -14,7 +14,7 @@ export const addInfoSlice = createSlice({
       sn: "",
       reg: "",
     },
-    validate: { isValidate: true },
+    validate: { isValidate: false },
   },
   reducers: {
     addAircraftInfo(state, action) {
