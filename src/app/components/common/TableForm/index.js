@@ -1,11 +1,12 @@
+import { ButtonWrapper, Wrapper } from "./styled";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectTable } from "../../../Redux/selectors";
-import { addTable } from "../../../Redux/slices/addTable";
+
 import { Button } from "../../ui/buttons/styled";
-import { Wrapper } from "./styled";
-import { TableFormInput } from "./TableFormInput";
 import { DateTime } from "luxon";
+import { TableFormInput } from "./TableFormInput";
+import { addTable } from "../../../Redux/slices/addTable";
+import { selectTable } from "../../../Redux/selectors";
 
 export const TableForm = () => {
   const [tableStateLocal, setTableStateLocal] = useState({});
@@ -77,7 +78,9 @@ export const TableForm = () => {
           reduxName={inputItem}
         />
       ))}
-      <Button onClick={() => add()}>Click</Button>
+      <ButtonWrapper>
+        <Button onClick={() => add()}>Click</Button>
+      </ButtonWrapper>
     </Wrapper>
   );
 };

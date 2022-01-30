@@ -7,6 +7,10 @@ export const InputWrapper = styled.div`
   flex-direction: column;
   height: max-content;
   margin: 1rem;
+  width: 16rem;
+  input {
+    width: 8rem;
+  }
   label {
     padding: 0 0 0.7rem 0;
     color: #ffffff;
